@@ -19,5 +19,27 @@ const infoproducts = products.map(product => {
 console.log("Nome e categoria dos produtos:\n", infoproducts);
 
 //b. Use map para criar um array com os preços de todos os produtos com impostos (15% a mais)
+const taxProducts = products.map((product) => {
+  return {
+    ...product,
+    price: product.price * 1.15 // 15% imposto
+  };
+});
+
+console.log("\nProdutos com 15% de imposto:");
+taxProducts.forEach((product) => {
+  console.log(
+    `${product.name} - Original: R$${(product.price / 1.15).toFixed(
+      2
+    )}, Com imposto: R$${product.price.toFixed(2)}`
+  );
+});
 
 //c. Combine forEach com um acumulador externo para calcular o valor total de todos os produtos
+let totalProd = 0;
+
+products.forEach((product) => {
+    totalProd += product.price;
+});
+
+console.log("\nValor total dos produtos: R$",totalProd.toFixed(2));
