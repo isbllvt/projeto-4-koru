@@ -1,3 +1,6 @@
+//Exercício 2: forEach e map
+
+//a. Use map para criar um array de strings formatadas como "Nome do produto - Categoria" para cada produto
 const products = [
   { id: 1, name: "Notebook", price: 1200, category: "Eletrônicos" },
   { id: 2, name: "Camiseta", price: 25, category: "Vestuário" },
@@ -12,3 +15,9 @@ const infoproducts = products.map(product => {
         categoria: product.category
     };
 });
+
+console.log("Nome e categoria dos produtos:\n", infoproducts);
+
+//b. Use map para criar um array com os preços de todos os produtos com impostos (15% a mais)
+
+//c. Combine forEach com um acumulador externo para calcular o valor total de todos os produtos
